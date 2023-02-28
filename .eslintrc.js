@@ -3,24 +3,31 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    jest: true
+    jest: true,
   },
-  extends: ["next/core-web-vitals", "eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended", "plugin:prettier/recommended", "plugin:storybook/recommended"],
-  overrides: [],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
-    ecmaVersion: "latest",
-    sourceType: "module"
+    ecmaVersion: 12,
+    sourceType: 'module',
   },
-  plugins: ["react"],
+  plugins: ['react', '@typescript-eslint'],
   settings: {
     react: {
-      version: "detect"
-    }
+      version: 'detect',
+    },
   },
   rules: {
-    "react/react-in-jsx-scope": "off"
-  }
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+  },
 };
